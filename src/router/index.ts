@@ -8,13 +8,17 @@ const routes = [
   {
     path: "/task/:id",
     name: "TaskDetails",
-    component: () => import("@/components/TaskDetails.vue"),
+    component: () => import("@/views/TaskDetails.vue"),
+  },
+  {
+    path: "/chart",
+    component: () => import("@/views/Chart.vue"),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  linkActiveClass: "text-blue-700",
+  linkActiveClass: "text-blue-500",
   routes,
 });
 

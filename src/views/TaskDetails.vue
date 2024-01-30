@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 bg-gray-800 rounded shadow-md flex flex-col items-center justify-center"
+    class="p-6 bg-gray-800 rounded shadow-md flex flex-col items-center justify-center task-detail"
   >
     <h1 class="text-2xl font-bold mb-4 text-white text-center">Task Details</h1>
     <p class="mb-2 text-white text-center">
@@ -53,4 +53,9 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.task-detail {
+  background-color: #1b1b1e;
+  min-height: 100vh;
+}
+</style>
