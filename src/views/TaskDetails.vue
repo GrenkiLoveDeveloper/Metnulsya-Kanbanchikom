@@ -46,14 +46,14 @@ const EInput = defineAsyncComponent(
 
 const route = useRoute();
 const store = useStore();
-let currentId: Ref<string | string[]> = ref("");
+let currentId: Ref<string> = ref("");
 
 let description = ref("");
 let text = ref("");
 const isUpdated = ref(false);
 
 onMounted(() => {
-  currentId.value = route.params.id;
+  currentId.value = JSON.stringify(route.params.id);
   const id = currentId.value;
 
   const task = store.stages
