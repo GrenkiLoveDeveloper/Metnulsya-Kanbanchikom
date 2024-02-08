@@ -1,5 +1,10 @@
-// store.ts
 import { defineStore } from "pinia";
+
+interface Task {
+  id: string;
+  text: string;
+  description: string;
+}
 
 export const useStore = defineStore({
   id: "canban",
@@ -65,6 +70,21 @@ export const useStore = defineStore({
       const stage = this.stages.find((stage) => stage.id === stageId);
       if (stage) {
         stage.tasks = stage.tasks.filter((task) => task.id !== taskId);
+      }
+    },
+
+    /**
+     * Обновляет задачу
+     *
+     * @param task
+     */
+    updateTask(task: Task) {
+      for (const stage of this.stages) {
+        const index = stage.tasks.findIndex((t) => t.id === task.id);
+        if (index !== -1) {
+          stage.tasks[index] = task;
+          break;
+        }
       }
     },
 

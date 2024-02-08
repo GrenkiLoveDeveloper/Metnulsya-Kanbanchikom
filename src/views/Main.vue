@@ -51,7 +51,7 @@ const addStage = async (name: string) => {
 
 <style scoped>
 .w-full {
-  background-color: #2d3748;
+  background-color: #1b1b1e;
   min-height: 100vh;
 }
 </style>
